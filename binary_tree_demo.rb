@@ -1,4 +1,4 @@
-require 'grid'
+require 'core/grid'
 require 'binary_tree'
 
 grid = Grid.new(4, 4)
