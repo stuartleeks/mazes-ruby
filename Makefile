@@ -3,8 +3,12 @@ help: ## show this help
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%s\033[0m|%s\n", $$1, $$2}' \
 	| column -t -s '|'
 
+
+ROWS?=4
+COLUMNS?=4
+
 binary_tree: ## demo binary tree
-	ruby -I. binary_tree_demo.rb
+	ROWS=${ROWS} COLUMNS=${COLUMNS} ruby -I. binary_tree_demo.rb
 
 sidewinder: ## demo Sidewinder
-	ruby -I. sidewinder_demo.rb
+	ROWS=${ROWS} COLUMNS=${COLUMNS} ruby -I. sidewinder_demo.rb

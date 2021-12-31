@@ -1,7 +1,9 @@
 require 'core/grid'
 require 'sidewinder'
 
-grid = Grid.new(4, 4)
+row_count = Integer(ENV['ROWS'])
+column_count = Integer(ENV['COLUMNS'])
+grid = Grid.new(row_count, column_count)
 
 Sidewinder.on(grid)
 
