@@ -5,3 +5,6 @@ help: ## show this help
 
 binary_tree: ## demo binary tree
 	ruby -I. binary_tree_demo.rb
+
+sidewinder: ## demo Sidewinder
+	ruby -I. sidewinder_demo.rb
