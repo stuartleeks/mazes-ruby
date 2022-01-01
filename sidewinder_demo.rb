@@ -8,3 +8,6 @@ grid = Grid.new(row_count, column_count)
 Sidewinder.on(grid)
 
 puts grid
+
+img = grid.to_png
+img.save 'maze.png'
