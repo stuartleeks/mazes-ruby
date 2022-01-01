@@ -4,8 +4,8 @@ help: ## show this help
 	| column -t -s '|'
 
 
-ROWS?=4
-COLUMNS?=4
+ROWS?=5
+COLUMNS?=5
 
 binary_tree: ## demo binary tree
 	ROWS=${ROWS} COLUMNS=${COLUMNS} ruby -I. binary_tree_demo.rb
@@ -15,3 +15,8 @@ sidewinder: ## demo Sidewinder
 
 dijkstra: ## demo Dijkstra
 	ROWS=${ROWS} COLUMNS=${COLUMNS} ruby -I. dijkstra_demo.rb
+
+longest_path: ## demo longest path search
+	ROWS=${ROWS} COLUMNS=${COLUMNS} ruby -I. longest_path_demo.rb
+longest_path2: ## demo longest path search (show start/end)
+	ROWS=${ROWS} COLUMNS=${COLUMNS} ruby -I. longest_path2_demo.rb
