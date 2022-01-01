@@ -46,3 +46,6 @@ grid.contents_func = lambda { |cell|
 }
 puts grid
 puts ''
+
+img = grid.to_png(cell_size: 32)
+img.save 'maze.png'

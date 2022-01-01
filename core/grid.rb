@@ -63,7 +63,7 @@ class Grid
     end
   end
 
-  def contents_of_cell(cell)
+  def contents_of_cell(_cell)
     ' '
   end
 
@@ -97,6 +97,8 @@ class Grid
 
     background = ChunkyPNG::Color::WHITE
     wall = ChunkyPNG::Color::BLACK
+    start_color = ChunkyPNG::Color.rgba(0,255,0, 255)
+    end_color = ChunkyPNG::Color.rgba(255, 0 ,0, 255)
 
     img = ChunkyPNG::Image.new(img_width, img_height, background)
 
@@ -111,6 +113,17 @@ class Grid
 
       img.line(x2, y1, x2, y2, wall) unless cell.linked?(cell.east)
       img.line(x1, y2, x2, y2, wall) unless cell.linked?(cell.south)
+
+      margin = cell_size/5
+      if contents_of_cell(cell) == 'S'
+        path = [
+          ChunkyPNG::Point.new(x1 + (cell_size / 2), y1 + margin),
+          ChunkyPNG::Point.new(x2 - margin, y2 - margin),
+          ChunkyPNG::Point.new(x1 + margin, y2 - margin)
+        ]
+        img.polygon(path, start_color, start_color)
+      end
+      img.rect(x1 + margin, y1 + margin, x2 - margin, y2 - margin, end_color, end_color) if contents_of_cell(cell) == 'E'
     end
 
     img
