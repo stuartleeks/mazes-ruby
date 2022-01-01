@@ -12,3 +12,6 @@ binary_tree: ## demo binary tree
 
 sidewinder: ## demo Sidewinder
 	ROWS=${ROWS} COLUMNS=${COLUMNS} ruby -I. sidewinder_demo.rb
+
+dijkstra: ## demo Dijkstra
+	ROWS=${ROWS} COLUMNS=${COLUMNS} ruby -I. dijkstra_demo.rb
